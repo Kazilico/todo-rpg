@@ -2,8 +2,56 @@
 <html>
   <head>
     <title>TodoRPG</title>
+	<script src="libs/underscore.js"></script>
+    <script src="libs/jquery.js"></script>
+    <script src="libs/handlebars.js"></script>
+
+    <link type="text/css" href="todo-rpg.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Yellowtail|Berkshire+Swash' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    Hey, you should put some content here!!
+  	<div class="background">
+  	<header class="banner">
+  		<span class="firstLetter">Y</span>
+  		<span class="restOfSentence">our adventure begins...</span>
+  	</header>
+	<img class="map" src="images/map.jpg" />
+  	<div id="taskList">
+  	</div>	
+	<div class="listContainer">
+		<ul class="toDoList">
+			<li class="viewAll" id="viewAll">View all tasks</li>
+			<li class="viewComplete" id="viewComplete">View all completed tasks</li>
+			<li class="viewIncomplete" id="viewIncomplete">View all incompleted tasks</li>
+			<li class="menuItem" id="item1">Mark an incomplete task</li>
+			<li class="menuItem" id="item1">Mark a completed task</li>
+			<li class="newTask" id="newTask">Create new task</li>
+			<li class="menuItem" id="item1">View experience points</li>
+		</ul>
+		<div class="newTask">
+			<div class="row">
+			Task: <input type="text" id="task">
+			</div>
+			<div class="row">
+			Point value: <input type="text" id="point-value">
+			</div>
+			<button class="newTaskButton" id="new-task-button">
+			Add a new task
+			</button>
+		</div>
+	</div>
+	  			
+   	</div>
+
+   	<script type="x-handlebars-template" id="task-template">
+   		<div class="task {{#if complete}}complete{{/if}}" data-id="{{id}}">
+   			<div class="description">{{ task }}</div>
+   			<div class="value">{{ value }}</div>
+   			<button class="closeButton">Completed task</button>
+   		</div>
+
+   	</script>
+
+   	<script src="index.js"></script>
   </body>
 </html>
