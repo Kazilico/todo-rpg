@@ -10,48 +10,43 @@
     <link href='http://fonts.googleapis.com/css?family=Yellowtail|Berkshire+Swash' rel='stylesheet' type='text/css'>
   </head>
   <body>
+  	<img class="map" src="images/map.jpg" />
   	<div class="background">
-  	<header class="banner">
-  		<span class="firstLetter">Y</span>
-  		<span class="restOfSentence">our adventure begins...</span>
-  	</header>
-	<img class="map" src="images/map.jpg" />
-  	<div id="taskList">
-  	</div>	
-	<div class="listContainer">
-		<ul class="toDoList">
-			<li class="viewAll" id="viewAll">View all tasks</li>
-			<li class="viewComplete" id="viewComplete">View all completed tasks</li>
-			<li class="viewIncomplete" id="viewIncomplete">View all incompleted tasks</li>
-			<li class="menuItem" id="item1">Mark an incomplete task</li>
-			<li class="menuItem" id="item1">Mark a completed task</li>
-			<li class="newTask" id="newTask">Create new task</li>
-			<li class="menuItem" id="item1">View experience points</li>
-		</ul>
-		<div class="newTask">
+	  	<div class="banner">
+	  		<span class="firstLetter">Y</span>
+	  		<span class="restOfSentence">our adventure begins...</span>
+	  	</div>
+		<div class="addContainer">
+			<div class="newTask" id="newTask">Create a new task</div>
 			<div class="row">
 			Task: <input type="text" id="task">
 			</div>
 			<div class="row">
 			Point value: <input type="text" id="point-value">
 			</div>
-			<button class="newTaskButton" id="new-task-button">
-			Add a new task
-			</button>
+				<button class="newTaskButton" id="new-task-button">
+				Add a new task
+				</button>	
+		</div>
+		<div class="listContainer">
+			<ul class="toDoList">
+				<li class="viewAll" id="viewAll">View all tasks</li>
+				<li class="viewComplete" id="viewComplete">View all completed tasks</li>
+				<li class="viewIncomplete" id="viewIncomplete">View all incompleted tasks</li>
+				<li class="menuItem" id="item1">Mark an incomplete task</li>
+				<li class="menuItem" id="item1">Mark a completed task</li>
+				<li class="menuItem" id="item1">View experience points</li>
+			</ul>
+			<div class="taskList" id="taskList">
+	   			<script type="x-handlebars-template" id="task-template">
+	   				<div class="task {{#if complete}}complete{{/if}}" data-id="{{id}}">
+	   				<div class="description">{{ task }}</div>
+	   				<div class="value">{{ value }}</div>
+	   				<button class="closeButton">Completed task</button>
+	   			</script>
+			</div>
 		</div>
 	</div>
-	  			
-   	</div>
-
-   	<script type="x-handlebars-template" id="task-template">
-   		<div class="task {{#if complete}}complete{{/if}}" data-id="{{id}}">
-   			<div class="description">{{ task }}</div>
-   			<div class="value">{{ value }}</div>
-   			<button class="closeButton">Completed task</button>
-   		</div>
-
-   	</script>
-
    	<script src="index.js"></script>
   </body>
 </html>

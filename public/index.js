@@ -9,7 +9,7 @@ $(document).on("ready", function() {
 	getCompletedTasks()
 	getIncompleteTasks()
 
-	var viewAll = []
+
 })
 
 var getAllTasks = function(){
@@ -57,6 +57,8 @@ var addTasks = function(){
 			getAllTasks()
 		}
 	})
+	$("#task").val("")
+	$("#point-value").val("")
 }
 
 var createTaskHtml = function(data) {
@@ -80,6 +82,8 @@ var createTaskHtml = function(data) {
 			})
 		})
 	})
+
+console.log(createTaskHtml)
 }
 
 
